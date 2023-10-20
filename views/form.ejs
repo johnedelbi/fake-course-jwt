@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Fake Store</title>
+    </head>
+    <body>
+        <%- include('./includes/nav.ejs', {isLoggedIn : isLoggedIn}) %>
+        <div class="form-container">
+            <form action="<%= action %>" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" />
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" />
+
+                <button type="submit"><%= button %></button>
+            </form>
+        </div>
+    </body>
+</html>
