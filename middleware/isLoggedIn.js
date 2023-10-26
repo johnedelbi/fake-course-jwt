@@ -1,8 +1,9 @@
 const isLoggedIn = (req, res, next) => {
-    if (req.session && req.session.isLoggedIn) {
+    if (req.cookie.token) {
+        console.log(req.cookie.token);
         next();
     } else {
-        res.status(302).redirect('/form-login');
+        res.status(302).redirect('/login');
     }
 };
 

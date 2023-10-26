@@ -74,12 +74,8 @@ const userControllers = {
         });
     },
     logOut: (req, res) => {
-        req.session.destroy((err) => {
-            if (err) {
-                console.log(err);
-            }
-            res.status(302).redirect('/');
-        });
+        res.clearCookie('token');
+        res.redirect('/');
     }
 };
 

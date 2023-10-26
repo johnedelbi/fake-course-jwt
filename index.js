@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 
+import logger from './middleware/logger.js';
 import userRoutes from './routes/user.js';
 import storeRoutes from './routes/store.js';
 
@@ -44,6 +45,8 @@ app.set('views', path.join(PATH, 'views'));
 // server static folder
 app.use(express.static(path.join(PATH, 'public')));
 
+//use middleware
+app.use(logger);
 // use routes
 app.use(userRoutes);
 app.use(storeRoutes);
